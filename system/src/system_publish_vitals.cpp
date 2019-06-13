@@ -133,5 +133,13 @@ inline int spark_protocol_post_description(ProtocolFacade*, int, void*)
 inline void ISRTaskQueue::enqueue(ISRTaskQueue::Task*)
 {
 }
+inline bool spark_cloud_flag_connected()
+{
+    return true;
+}
+inline int spark_protocol_to_system_error(int error)
+{
+    return error;
+}
 ISRTaskQueue SystemISRTaskQueue;
 #endif // UNIT_TEST
