@@ -68,6 +68,7 @@ INCLUDE_DIRS += $(PROJECT_ROOT)/$(DYNALIB)/inc
 INCLUDE_DIRS += $(PROJECT_ROOT)/$(WIRING)/inc
 INCLUDE_DIRS += $(PROJECT_ROOT)/$(CRYPTO)/inc
 INCLUDE_DIRS += $(PROJECT_ROOT)/$(MBEDTLS)/include
+INCLUDE_DIRS += $(PROJECT_ROOT)/$(HAL)/src/gcc
 
 CFLAGS += $(patsubst %,-I%,$(INCLUDE_DIRS)) -I.
 CFLAGS += -ffunction-sections -fdata-sections -Wall
