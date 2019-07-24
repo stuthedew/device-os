@@ -145,6 +145,7 @@ auto SessionPersist::restore(mbedtls_ssl_context* context, bool renegotiate, uin
 
 		mbedtls_ssl_handshake_wrapup(context);
 		size = sizeof(*this);
+
 		return COMPLETE;
 	}
 	else
@@ -297,7 +298,11 @@ void DTLSMessageChannel::init()
 	mbedtls_ssl_config_init (&conf);
 	mbedtls_x509_crt_init (&clicert);
 	mbedtls_pk_init (&pkey);
+#ifndef MBEDTLS_DEBUG_COMPILE_TIME_LEVEL
 	mbedtls_debug_set_threshold(1);
+#else
+	mbedtls_debug_set_threshold(MBEDTLS_DEBUG_COMPILE_TIME_LEVEL);
+#endif // MBEDTLS_DEBUG_COMPILE_TIME_LEVEL
 }
 
 void DTLSMessageChannel::dispose()
