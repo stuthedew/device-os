@@ -29,7 +29,7 @@ make all > build.log || die "Problem building unit tests. Please see build.log"
 make run > obj/TEST-${TRAVIS_BUILD_NUMBER}.xml
 
 if [ "$?" == "0" ]; then
-    echo Yay! Unit tests PASSED!    
+    echo Yay! Unit tests PASSED!
 else
     echo Bummer. Unit tests FAILED.
     exit 1
@@ -54,6 +54,6 @@ cd $unit_test_dir
 rm -rf .build
 mkdir .build && cd .build
 cmake ..
-make && make test
+make all test coverage
 
 

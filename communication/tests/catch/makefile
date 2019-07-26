@@ -62,6 +62,7 @@ include $(call rwildcard,$(PROJECT_ROOT)/$(COMMUNICATION)/lib/,build.mk)
 
 # these include dirs relative to project root
 INCLUDE_DIRS += $(PROJECT_ROOT)/$(SERVICES)/inc
+INCLUDE_DIRS += $(PROJECT_ROOT)/$(COMMUNICATION)/inc
 INCLUDE_DIRS += $(PROJECT_ROOT)/$(COMMUNICATION)/src
 INCLUDE_DIRS += $(PROJECT_ROOT)/$(HAL)/shared $(PROJECT_ROOT)/$(HAL)/inc
 INCLUDE_DIRS += $(PROJECT_ROOT)/$(DYNALIB)/inc
@@ -160,6 +161,3 @@ test: runner
 
 # Include auto generated dependency files
 -include $(ALLDEPS)
-
-
-
